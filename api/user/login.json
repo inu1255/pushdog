@@ -1,0 +1,37 @@
+{
+    "name": "登录",
+    "method": "POST",
+    "params": {
+        "title": {
+            "rem": "账号/邮箱/电话号码",
+            "need": true,
+            "len": [1, 32],
+            "reg": "^(\\w+)|(([\\w-])+@([\\w-])+(.[\\w-])+)$"
+        },
+        "password": {
+            "rem": "密码",
+            "need": true,
+            "len": [6, 32]
+        }
+    },
+    "error": {
+        "404": "账号不存在",
+        "405": "密码错误"
+    },
+    "ret": {
+        "no": 200,
+        "msg": "",
+        "data": {
+            "id|+1": 1,
+            "account": "@regex(\\w{1,32})",
+            "name": "@cname",
+            "zi": "@clast@clast",
+            "birthday": "@date('yyyy-MM-dd')",
+            "birthtime": "@time('HH:mm:ss')",
+            "telphone": "@regex(\\d{11})",
+            "idcard": "@id",
+            "avatar": "@image('80x80')",
+            "desc": "@cparagraph"
+        }
+    }
+}

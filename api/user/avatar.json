@@ -1,0 +1,27 @@
+{
+    "name": "上传头像",
+    "method": "POST",
+    "params": {
+    },
+    "grant":{
+        "$U": "需要登录"
+    },
+    "error": {
+    },
+    "ret": {
+        "no": 200,
+        "msg": "",
+        "data": {
+            "id|+1": 1,
+            "account": "@regex(\\w{1,32})",
+            "name": "@cname",
+            "zi": "@clast@clast",
+            "birthday": "@date('yyyy-MM-dd')",
+            "birthtime": "@time('HH:mm:ss')",
+            "telphone": "@regex(\\d{11})",
+            "idcard": "@id",
+            "avatar": "@image('80x80')",
+            "desc": "@cparagraph"
+        }
+    }
+}

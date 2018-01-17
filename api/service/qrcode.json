@@ -1,0 +1,36 @@
+{
+    "name": "生成服务链接",
+    "method": "GET",
+    "params": {
+        "sid": {
+            "rem": "服务id",
+            "need": true
+        },
+        "uid": {
+            "rem": "用户id",
+            "type": "int",
+            "def": 0
+        },
+        "minute": {
+            "rem": "多久后过期",
+            "type": "int",
+            "def": 1440
+        },
+        "pic": {
+            "rem": "返回图片",
+            "type": "int",
+            "enum": [0, 1],
+            "def": 0
+        }
+    },
+    "grant": {
+        "$U": "需要登录"
+    },
+    "error": {
+        "404": "服务不存在或无权限"
+    },
+    "ret": {
+        "no": 200,
+        "msg": ""
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "name": "标记通知",
+    "method": "POST",
+    "params": {
+        "nids": {
+            "rem": "通知id",
+            "type": "array",
+            "need": true
+        },
+        "read": {
+            "rem": "是否已读",
+            "enum": [
+                0, // 未读
+                1, // 已读
+            ],
+            "def": 1
+        }
+    },
+    "error": {},
+    "ret": {
+        "no": 200,
+        "msg": ""
+    }
+}

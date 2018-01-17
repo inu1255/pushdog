@@ -1,0 +1,27 @@
+{
+    "name": "发送通知",
+    "method": "POST",
+    "params": {
+        "sid": {
+            "rem": "服务id",
+            "type": "int",
+            "need": true
+        },
+        "content": {
+            "rem": "通知内容",
+            "need": true
+        },
+        "data": {
+            "rem": "通知数据",
+            "type": "json"
+		},
+		"token":{
+			"rem": "token"
+		}
+    },
+    "error": {},
+    "ret": {
+        "no": 200,
+        "msg": ""
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "name": "修改个人信息",
+    "method": "POST",
+    "params": {
+        "name": {
+            "rem": "姓名"
+        },
+        "zi": {
+            "rem": "字"
+        },
+        "birthday": {
+            "rem": "生日",
+            "reg": "^-?\\d{1,4}-\\d{2}-\\d{2}$"
+        },
+        "birthtime": {
+            "rem": "出生时间",
+            "reg": "^\\d{2}:\\d{2}$"
+        },
+        "idcard": {
+            "rem": "身份证号",
+            "reg": "^\\d{17}[\\dx]$"
+        },
+        "avatar":{
+            "rem": "头像url"
+        },
+        "desc": {
+            "rem": "个人介绍"
+        }
+    },
+    "grant":{
+        "$U": "需要登录"
+    },
+    "error": {
+    },
+    "ret": {
+        "no": 200,
+        "msg": "",
+        "data": {
+            "id|+1": 1,
+            "account": "@regex(\\w{1,32})",
+            "name": "@cname",
+            "zi": "@clast@clast",
+            "birthday": "@date('yyyy-MM-dd')",
+            "birthtime": "@time('HH:mm:ss')",
+            "telphone": "@regex(\\d{11})",
+            "idcard": "@id",
+            "avatar": "@image('80x80')",
+            "desc": "@cparagraph"
+        }
+    }
+}

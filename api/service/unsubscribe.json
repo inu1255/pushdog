@@ -1,0 +1,19 @@
+{
+    "name": "取消订阅服务",
+    "method": "GET",
+    "params": {
+        "sid": {
+            "rem": "服务id",
+            "need": true
+        }
+    },
+    "grant": {
+        "$U": "需要登录"
+    },
+    "error": {
+    },
+    "ret": {
+        "no": 200,
+        "msg": ""
+    }
+}
