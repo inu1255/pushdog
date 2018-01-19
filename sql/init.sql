@@ -9,6 +9,7 @@ create table if not exists user (
   avatar varchar(1024) default null,
   profile varchar(255) default null,
   role varchar(32) default '',
+  token varchar(64) default null,
   invite int default 0,
   create_at timestamp default current_timestamp,
   unique key user_account_unique (account),

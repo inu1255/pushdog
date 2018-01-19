@@ -13,10 +13,9 @@ exports.push = function*(req, res) {
     }
     let users = yield db.execSQL("select uid,token from subscribe left join user on user.id=subscribe.uid where sid=? and token is not null", [body.sid]);
     if (users.length) {
-        yield push.sendList(users.map(x => x.token), {
+        yield push.send(users.map(x => x.token), {
             title: service.name,
-            logo: service.logo,
-            content: body.content,
+            description: body.content,
             payload: JSON.stringify(Object.assign({}, body.data, { sid: body.sid }))
         });
         let sqls = users.map(row => db.insert("notice", {

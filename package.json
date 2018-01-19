@@ -29,7 +29,8 @@
     "node-fetch": "^1.7.3",
     "node-hot-require": "^1.0.6",
     "nodemailer": "^4.1.1",
-    "redis": "^2.8.0"
+    "redis": "^2.8.0",
+    "xiaomi-push": "^0.5.0"
   },
   "devDependencies": {
     "mocha": "^3.5.3"
