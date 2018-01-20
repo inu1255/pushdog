@@ -94,6 +94,11 @@ function paramCheck(k, param) {
                                 return `${name}必须是整数`;
                             value = body[k] = parseInt(value);
                             break;
+                        case "number":
+                            if (!/^[\d\.]/.test(value))
+                                return `${name}必须是数字`;
+                            value = body[k] = parseFloat(value);
+                            break;
                         case "array":
                             if (typeof value !== "object") {
                                 try {

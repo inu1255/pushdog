@@ -4,6 +4,10 @@
     "params": {
         "appid": {
             "rem": "appid"
+        },
+        "v": {
+            "rem": "版本",
+            "type": "number"
         }
     },
     "ret": {
