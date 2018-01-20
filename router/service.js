@@ -40,6 +40,7 @@ exports.list = function*(req, res) {
     if (body.s) {
         sql.orWhere(db.where("name", "like", body.s).or("brief", "like", body.s));
     }
+    sql.orderBy("update_at desc").limit(body.offset, 10);
     return yield sql;
 };
 

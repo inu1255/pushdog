@@ -11,6 +11,7 @@ exports.push = function*(req, res) {
     if (!user && body.token != service.token) {
         return 405;
     }
+    /** @type {Array} */
     let users = yield db.execSQL("select uid,token from subscribe left join user on user.id=subscribe.uid where sid=? and token is not null", [body.sid]);
     if (users.length) {
         yield push.send(users.map(x => x.token), {
@@ -25,6 +26,7 @@ exports.push = function*(req, res) {
             content: body.content,
             data: JSON.stringify(body.data)
         }));
+        sqls.push(db.update("service", { update_at: new Date().getTime() }).where("id", body.sid));
         yield db.execSQL(sqls);
     }
 };
@@ -40,7 +42,7 @@ exports.read = function*(req, res) {
 exports.list = function*(req, res) {
     let body = req.body;
     let user = req.session.user;
-    let sql = db.select("notice").where("uid", user.id);
+    let sql = db.select("notice").where("uid", user.id).orderBy("create_at desc").limit(body.offset, 10);
     if (body.read == 0) {
         sql.where("read_at", 0);
     } else if (body.read == 1) {

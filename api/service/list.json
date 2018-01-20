@@ -8,6 +8,11 @@
         },
         "s": {
             "rem": "查找内容"
+        },
+        "offset": {
+            "rem": "offset",
+            "type": "int",
+            "def": 0
         }
     },
     "error": {},

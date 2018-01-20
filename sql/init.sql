@@ -45,6 +45,7 @@ create table if not exists service(
   logo varchar(256) default null,
   brief text,
   token varchar(32) default null,
+  update_at bigint not null default 0,
   create_at timestamp default current_timestamp
 );
 

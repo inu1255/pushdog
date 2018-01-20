@@ -2,6 +2,11 @@
     "name": "我的服务",
     "method": "GET",
     "params": {
+        "offset": {
+            "rem": "offset",
+            "type": "int",
+            "def": 0
+        }
     },
     "grant": {
         "$U": "需要登录"

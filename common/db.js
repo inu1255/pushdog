@@ -436,6 +436,11 @@ exports.SingleSQL = function(sql, args) {
     });
 };
 
+/**
+ * 
+ * @param {Array<String|Sql>|String|Sql} sqls 
+ * @returns {Promise<Array>}
+ */
 exports.execSQL = function(sqls) {
     let argu = arguments;
     return new Promise(function(resolve, reject) {

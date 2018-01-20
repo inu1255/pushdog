@@ -1,0 +1,1 @@
+alter table service add column update_at bigint not null default 0 after token;

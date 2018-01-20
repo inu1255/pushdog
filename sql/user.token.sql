@@ -1,1 +1,0 @@
-alter table user add column token varchar(32) after invite;
