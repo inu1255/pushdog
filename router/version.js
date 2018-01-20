@@ -3,8 +3,11 @@ const fs = require("fs");
 
 exports.stable = function*(req, res) {
     let body = req.body;
-    let filenames = fs.readdirSync("./public/version");
     let maxFile, max = 0;
+    let filenames = [];
+    try {
+        filenames = fs.readdirSync("./public/version");
+    } catch (error) {}
     for (let filename of filenames) {
         if (filename.endsWith(".wgt")) {
             var version = parseFloat(filename);
